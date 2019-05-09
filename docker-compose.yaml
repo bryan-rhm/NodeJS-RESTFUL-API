@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  go-server:
+    image: gocd/gocd-server:v17.9.0
+    ports:
+      - 8153:8153
+      - 8154:8154
+  
+  goagent:
+    image: gocd/gocd-agent-alpine-3.5:v17.9.0
+    links:
+      - go-server
+    environment:
+      GO_SERVER_URL: https://go-server:8154/go
