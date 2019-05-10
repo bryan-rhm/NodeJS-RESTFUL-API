@@ -1,1 +1,1 @@
-echo "hello world from gocd"
+echo "hello nclouds from gocd"
